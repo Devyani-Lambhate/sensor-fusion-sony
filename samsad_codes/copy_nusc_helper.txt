@@ -1,0 +1,17 @@
+import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--sensor", default="", help="Sensor type")
+    parser.add_argument("--fault", default="", help="Fault type")
+    parser.add_argument("--sub_fault", default="beam_drop_30", help="Sub-fault type")
+    parser.add_argument("--orig_root", default="/home/saksham/samsad/mtech-project/datasets/nuscenes_part1/v1.0-trainval", help="Original root directory")
+    parser.add_argument("--sim_root", default="/home/saksham/samsad/mtech-project/datasets/nuscenes_part1/v1.0-trainval-sim", help="Simulated root directory")
+    parser.add_argument("--out_root", default="/home/saksham/samsad/mtech-project/sensor-fusion/CMT/data/nuscenes_density", help="Output root directory")
+
+    args = parser.parse_args()
+
+    sensor = args.sensor
+    fault = args.fault
+    sub_fault = args.sub_fault
+    orig_root = args.orig_root
+    sim_root = f"{args.sim_root}/{sensor}/{fault}/{sub_fault}"
+    out_root = "/home/saksham/samsad/mtech-project/sensor-fusion/CMT/data/nuscenes_density"
